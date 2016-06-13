@@ -1,3 +1,5 @@
+package authentication;
+
 import org.pac4j.core.context.HttpConstants;
 import org.pac4j.core.context.WebContext;
 import org.pac4j.sparkjava.DefaultHttpActionAdapter;
@@ -8,11 +10,11 @@ import java.util.HashMap;
 
 import static spark.Spark.halt;
 
-public class DemoHttpActionAdapter extends DefaultHttpActionAdapter {
+public class HttpActionAdapter extends DefaultHttpActionAdapter {
 
     private final TemplateEngine templateEngine;
 
-    public DemoHttpActionAdapter(final TemplateEngine templateEngine) {
+    public HttpActionAdapter(final TemplateEngine templateEngine) {
         this.templateEngine = templateEngine;
     }
 

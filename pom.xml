@@ -29,6 +29,16 @@
     <!-- library dependencies -->
     <dependencies>
         <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.4.6</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.39</version>
+        </dependency>
+        <dependency>
             <groupId>com.sparkjava</groupId>
             <artifactId>spark-core</artifactId>
             <version>2.5</version>
@@ -39,8 +49,6 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
-        <!-- http://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
@@ -77,19 +85,16 @@
             <artifactId>pac4j-jwt</artifactId>
             <version>${pac4jVersion}</version>
         </dependency>
-        <!-- http://mvnrepository.com/artifact/org.pac4j/pac4j-core -->
         <dependency>
             <groupId>org.pac4j</groupId>
             <artifactId>pac4j-core</artifactId>
             <version>${pac4jVersion}</version>
         </dependency>
-        <!-- http://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>3.0</version>
         </dependency>
-        <!-- http://mvnrepository.com/artifact/commons-codec/commons-codec -->
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>

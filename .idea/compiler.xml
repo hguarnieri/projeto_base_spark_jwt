@@ -22,10 +22,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="projeto_base" />
         <module name="spark_jwt" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="projeto_base" target="1.8" />
       <module name="spark_jwt" target="1.8" />
     </bytecodeTargetLevel>
   </component>

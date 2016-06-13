@@ -1,3 +1,4 @@
+import authentication.ConfigFactory;
 import org.pac4j.core.config.Config;
 import org.pac4j.core.profile.ProfileManager;
 import org.pac4j.core.profile.UserProfile;
@@ -18,7 +19,7 @@ import java.util.Map;
 import static spark.Spark.*;
 
 public class Main {
-    private final static String JWT_SALT = "12345678901234567890123456789012";
+    private final static String JWT_SALT = "n4MUerv8UCvL5tZnT2k6Ar0K1A9VUU7h";
 
     private final static Logger logger = LoggerFactory.getLogger(Main.class);
 
@@ -31,14 +32,13 @@ public class Main {
         port(8080);
 
         // Cria um arquivo de configuração
-        final Config config = new DemoConfigFactory(JWT_SALT, templateEngine).build();
+        final Config config = new ConfigFactory(JWT_SALT, templateEngine).build();
 
         // Protege as páginas
-        before("/rest-jwt", new RequiresAuthenticationFilter(config, "HeaderClient"));
+        before("/rest-jwt", new RequiresAuthenticationFilter(config, "HeaderClient", "admin"));
         before("/jwt", new RequiresAuthenticationFilter(config, "DirectBasicAuthClient"));
 
         // Cria os caminhos
-        get("/basicauth", Main::protectedIndex, templateEngine);
         get("/jwt", Main::jwt, templateEngine);
         get("/rest-jwt", Main::protectedIndex, templateEngine);
         get("/logout", new ApplicationLogoutRoute(config));
