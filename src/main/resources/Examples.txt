@@ -1,0 +1,7 @@
+Auth examples:
+
+curl -u jle:jle http://localhost:8080/jwt
+    Responde um token
+
+curl http://localhost:8080/rest-jwt -H "Authorization: Bearer <token>"
+    Solicita a página com esse token
